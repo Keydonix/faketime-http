@@ -29,5 +29,6 @@ Http.createServer(async (request, response) => {
 
 // process 1 doesn't exit by default on SIGINT in NodeJS, so we need an explicit SIGINT handler
 Process.on('SIGINT', () => Process.exit(1))
+Process.on('SIGTERM', () => Process.exit(1))
 
 console.log('Listening on port 80')
